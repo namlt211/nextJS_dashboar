@@ -270,13 +270,17 @@ const Warehouse = () => {
                   <div>{tr.quantity}/10</div>
                   <div className="w-full bg-[#cfd2da] h-[4px] rounded-full">
                     <div
-                      className={`${
+                      style={
                         tr.quantity === 0
-                          ? "bg-[#cfd2da] w-0"
+                          ? { width: "5%", backgroundColor: "#9095a1" }
                           : tr.quantity === 10
-                          ? "bg-[#67cf8a] w-full"
-                          : `bg-[#ed7d2d] w-[${(tr.quantity / 10) * 100}%]`
-                      }  h-[4px] rounded-full`}
+                          ? { width: "100%", backgroundColor: "#67cf8a" }
+                          : {
+                              width: `${(tr.quantity / 10) * 100}%`,
+                              backgroundColor: "#ed7d2d",
+                            }
+                      }
+                      className={`h-[4px] rounded-full`}
                     ></div>
                   </div>
                 </td>
